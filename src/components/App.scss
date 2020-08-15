@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  padding-top: 1.5rem;
+  background: rgb(210, 185, 76);
+  background: linear-gradient(
+    42deg,
+    rgba(210, 185, 76, 1) 9%,
+    rgba(9, 9, 121, 0.5340511204481793) 47%,
+    rgba(255, 113, 0, 0.6292892156862745) 90%,
+    rgba(212, 211, 3, 0.6348914565826331) 95%
+  );
+  // overflow: hidden;
+}

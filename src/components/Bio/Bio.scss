@@ -1,0 +1,76 @@
+.Bio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #000;
+}
+
+.Wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin: 2rem 1rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.Header {
+  text-align: center;
+}
+
+.Image {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: slideFromLeft linear 0.5s;
+
+  img {
+    width: 100%;
+    height: 90%;
+  }
+}
+
+@keyframes slideFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.Content {
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  font-size: 1.5rem;
+  color: #000;
+  animation: slideFromRight 0.5s linear;
+
+  h2 {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@keyframes slideFromRight {
+  0% {
+    transform: translateX(200%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 800px) {
+  .Wrapper {
+    grid-template-columns: 1fr;
+    background: linear-gradient(
+      42deg,
+      rgba(255, 115, 0, 0.336) 90%,
+      rgba(212, 212, 3, 0.556) 95%
+    );
+  }
+}
