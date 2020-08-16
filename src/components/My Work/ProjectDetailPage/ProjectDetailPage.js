@@ -19,6 +19,7 @@ const ProjectDetailPage = (props) => {
       </div>
       <div className="Video">
         <iframe
+          title={project.youtubeId}
           src={`https://www.youtube.com/embed/${project.youtubeId}`}
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
