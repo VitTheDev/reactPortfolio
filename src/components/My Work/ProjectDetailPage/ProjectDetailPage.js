@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { projects } from '../../../Pojects/Projects';
 
 import './ProjectDetail.scss';
@@ -33,9 +32,9 @@ const ProjectDetailPage = (props) => {
         </ul>
       </div>
       <div className="github">
-        <Link to="/github" target="_blank">
+        <a rel="noopener noreferrer" href={project.gitHub} target="_blank">
           <button>GitHub Repo</button>
-        </Link>
+        </a>
       </div>
     </div>
   );
