@@ -27,7 +27,7 @@ a {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100vh;
+  height: 120vh;
   padding-top: 1.5rem;
   background: rgb(210, 185, 76);
   background: linear-gradient(
@@ -37,5 +37,4 @@ a {
     rgba(255, 113, 0, 0.6292892156862745) 90%,
     rgba(212, 211, 3, 0.6348914565826331) 95%
   );
-  // overflow: hidden;
 }

@@ -32,7 +32,7 @@ const ProjectDetailPage = (props) => {
         </ul>
       </div>
       <div className="github">
-        <Link to="/github/" target="_blank">
+        <Link to="/github" target="_blank">
           <button>GitHub Repo</button>
         </Link>
       </div>

@@ -33,7 +33,7 @@ const App = () => {
           <Route exact path="/contact" render={() => <Contact />} />
           <Route
             exact
-            path="/github/"
+            path="/github"
             render={() =>
               (window.location =
                 'https://github.com/VitTheDev?tab=repositories')
