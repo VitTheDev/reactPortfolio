@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { key } from '../../../Pojects/Projects';
+import Spinner from '../../UI/Spinner';
 
 import './ProjectSnippet.scss';
 
@@ -9,8 +10,15 @@ class ProjectSnippet extends Component {
   state = {
     overlay: false,
     image: null,
+    loading: false,
   };
+
+  componentDidMount() {
+    this.fetchVideoImage();
+  }
+
   fetchVideoImage = async () => {
+    this.setState({ loading: true });
     await axios
       .get('https://www.googleapis.com/youtube/v3/videos', {
         params: {
@@ -22,6 +30,7 @@ class ProjectSnippet extends Component {
       .then((res) =>
         this.setState({
           image: res.data.items[0].snippet.thumbnails.medium.url,
+          loading: false,
         })
       )
       .catch((err) => console.log(err));
@@ -35,12 +44,12 @@ class ProjectSnippet extends Component {
     this.setState({ overlay: false });
   };
 
-  componentDidMount() {
-    this.fetchVideoImage();
-  }
-
   render() {
+    console.log('inside render');
     const { image } = this.state;
+    if (this.state.loading) {
+      return <Spinner />;
+    }
     return (
       <div
         onMouseEnter={this.setOverlay}
@@ -48,11 +57,7 @@ class ProjectSnippet extends Component {
         onMouseLeave={this.unsetOverlay}
       >
         <div>
-          {image ? (
-            <img src={image} alt={this.props.name} />
-          ) : (
-            <h2>Loading...</h2>
-          )}
+          <img src={image} alt={this.props.name} />
         </div>
         {this.state.overlay ? (
           <Link to={`/mywork/${this.props.youtubeId}`}>
